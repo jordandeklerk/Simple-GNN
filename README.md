@@ -36,7 +36,6 @@ and run the main training script
 ```shell
 python main.py 
 ```
-Make sure to adjust the checkpoint directory in train.py to store checkpoint files.
 
 <hr>
 
