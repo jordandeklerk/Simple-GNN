@@ -3,6 +3,7 @@ from torch.utils.tensorboard import SummaryWriter
 import os
 import shutil
 import time 
+from utils import empty_dir
 
 
 class Trainer:
@@ -148,14 +149,3 @@ class Trainer:
                 lr=self.lr,
                 momentum=self.momentum,
             )
-
-    def empty_dir(self, path):
-        if os.path.exists(path):
-            for file in os.listdir(path):
-                file_path = os.path.join(path, file)
-                if os.path.isfile(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-        else:
-            os.makedirs(path)
